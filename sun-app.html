@@ -10,13 +10,12 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-        <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
         <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/style.css">
     </head>
-    <body>
+    <body ng-app="" ng-controller="suntimesController">
 
         <div class="search-header">
             <h1>Sunrise and Sunset Calculator</h1>
@@ -44,7 +43,7 @@
                   </div><!-- /.col-lg-2 -->
 
                   <div class="col-lg-2">                                    
-                    <button type="button" class="btn btn-default search-submit">Display</button>
+                    <button type="button" class="btn btn-default search-submit" >Display</button>
                   </div><!-- /.col-lg-2 -->
 
                 </div><!-- /.row -->   
@@ -52,7 +51,7 @@
 
         </div>
 
-<div id="sun-table" ng-app="" ng-controller="suntimesController">
+<div id="sun-table" >
      <div class="table-responsive">          
       <table class="table">
         <thead>
@@ -64,8 +63,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="sun in sundates">
-            <td>{{ date - needs data binding }}</td>
+          <tr ng-repeat="sun in sundates" id="date-tag">
+            <td >{{ sun.start_date }}</td>
             <td>{{ sun.sunrise }}</td>
             <td>{{ sun.sunset }}</td>
             <td>{{ sun.day_length }}</td>
@@ -78,8 +77,8 @@
 <footer>
     <p>References: http://sunrise-sunset.org/api</p>
 </footer>
-
         <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
+        <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
         <script src="js/app.js" type="text/javascript"></script>
